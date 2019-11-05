@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do It</title>
+    <!--- Bootstrap 4-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}">
+    <!-- JS -->
+
+</head>
+<body>
+<main class="container p-4">
+    <h1 class="display-4 text-center mt-4"> Task APP </h1>
+
+    <div class="row">
+        <div class="col-md-4 offset-md-4 my-auto">
+            <div class="card">
+                <div class="card-header">
+                    <form action="{{url_for('create_task')}}" method="post">
+                        <div class="form-group">
+                            <input type="text" name="tarefatodo" placeholder="Tarefa" class="form-control" autofocus aria-autocomplete="list"></div>
+                    </form>
+                </div>
+                <card class="body">
+                    <ul class="list-group">
+                        {% for task in task_list %}
+                        <li class="list-group-item">
+                            {% if task.done %}
+                            <strike>{{task.content}}</strike>
+                            {% else %}
+                            {{task.content}}
+                            {% endif %}
+                            <a href="/delete/{{task.id}}">Delete</a>
+                            <a href="/mark/{{task.id}}">Done</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </card>
+
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+</body>
+</html>
