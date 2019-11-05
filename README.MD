@@ -1,8 +1,8 @@
-<h1> ScreenShot</h1>
-![](./docs/screenshot.png)
+Projeto de um site todolist simples desenvolvido em python com uso do Flask e SQLite.
 
-Projeto de um site todolist simples desenvolvido em
-python com uso do Flask e SQLite.
+## Screenshot
+![ScreenShoot](./docs/screenshot.png)
+
 
 ## como executar o projeto
 
@@ -13,7 +13,7 @@ através do `pip` com o comando:
   pip3 install -r requirements.txt
 ```
 
-Após isso, será necessário criar o banco de dados usando o ![Manager e Migrate](https://flask-migrate.readthedocs.io/en/latest/) através dos comandos:
+Após isso, será necessário criar o banco de dados usando o [Manager e Migrate](https://flask-migrate.readthedocs.io/en/latest/ "Referências") através dos comandos:
 
 ```bash
   $ python run.py db init
